@@ -10,9 +10,9 @@ def passcard_info_view(request, passcode):
 
     for visit in all_visits:
         visit_detail = dict(
-            entered_at = visit.entered_at,
-            duration = Visit.format_duration(visit.get_duration()),
-            is_strange = visit.is_strange()
+            entered_at=visit.entered_at,
+            duration=Visit.format_duration(visit.get_duration()),
+            is_strange=visit.is_strange()
         )
         this_passcard_visits.append(visit_detail)
 
