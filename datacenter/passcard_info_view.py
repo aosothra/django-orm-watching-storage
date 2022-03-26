@@ -11,7 +11,7 @@ def passcard_info_view(request, passcode):
     for visit in this_passcard_visits:
         serialized_visit = dict(
             entered_at=visit.entered_at,
-            duration=Visit.format_duration(visit.get_duration()),
+            duration=visit.get_format_duration(),
             is_strange=visit.is_strange()
         )
         serialized_passcard_visits.append(serialized_visit)

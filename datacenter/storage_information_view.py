@@ -10,7 +10,7 @@ def storage_information_view(request):
         serialized_visit = dict(
             who_entered=visit.passcard.owner_name,
             entered_at=visit.entered_at,
-            duration=Visit.format_duration(visit.get_duration()),
+            duration=visit.get_format_duration(),
             is_strange=visit.is_strange()
         )
         serialized_open_visits.append(serialized_visit)

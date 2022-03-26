@@ -39,6 +39,15 @@ class Visit(models.Model):
         duration = time_last - self.entered_at
         return duration.total_seconds()
 
+    def get_format_duration(self):
+        """Converts time duration in seconds to a readable format"""
+        
+        seconds = self.get_duration()
+
+        hours = int(seconds // 3600)
+        minutes = int((seconds % 3600) // 60)
+        return f'{hours}h {minutes}m'
+
     def __str__(self):
         return '{user} entered at {entered} {leaved}'.format(
             user=self.passcard.owner_name,
@@ -48,11 +57,3 @@ class Visit(models.Model):
                 if self.leaved_at else 'not leaved'
             )
         )
-    
-    @staticmethod
-    def format_duration(seconds):
-        """Converts time duration in seconds to a readable format"""
-        
-        hours = int(seconds // 3600)
-        minutes = int((seconds % 3600) // 60)
-        return f'{hours}h {minutes}m'
