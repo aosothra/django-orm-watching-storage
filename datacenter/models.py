@@ -41,7 +41,7 @@ class Visit(models.Model):
 
     def get_format_duration(self):
         """Converts time duration in seconds to a readable format"""
-        
+
         seconds = self.get_duration()
 
         hours = int(seconds // 3600)
