@@ -30,6 +30,7 @@ DB_USER = ''
 DB_PASSWORD = ''
 
 SECRET_KEY = ''
+ALLOWED_HOSTS = ''
 
 DEBUG = false
 ```
@@ -43,6 +44,8 @@ DEBUG = false
 `DB_USER` and `DB_PASSWORD` refers to respective credentials to access the database.
 
 `SECRET_KEY` is special unique string, usually set to something unpredictable. As name implies - keep it secret. Find more about secret key [here](https://docs.djangoproject.com/en/3.2/ref/settings/#secret-key).
+
+`ALLOWED_HOSTS` is a list of domain names/masks expected to be served by server. This value must be set up to prevent [HTTP Host header attacks](https://docs.djangoproject.com/en/3.2/topics/security/#host-headers-virtual-hosting). Find more about allowed hosts [here](https://docs.djangoproject.com/en/3.2/ref/settings/#allowed-hosts)
 
 `DEBUG` is boolean flag, that controls wether your Django application runs in debug mode. That might be useful in development, but deploying your app with debug mode switched on is a **BAD IDEA**. Find more about debug mode [here](https://docs.djangoproject.com/en/3.2/ref/settings/#debug). `DEBUG` variable is optional and default value is set to `False`
 
